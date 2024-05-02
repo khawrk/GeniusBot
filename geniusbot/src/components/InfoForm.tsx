@@ -1,13 +1,16 @@
 import { FormEvent, useContext, useState } from "react"
 import UserContext from "../context/userContext"
 
-
 const InfoForm = () => {
-    const { setName, setEmail, setZipcode, setPhone, setSubmitForm } = useContext(UserContext)
+    const { setName, setEmail, setZipcode, setPhone, setSubmitForm, submitForm } = useContext(UserContext)
     const [inputName, setInputName] = useState<string>("")
     const [inputEmail, setInputEmail] = useState<string>("")
     const [inputPhone, setInputPhone] = useState<string>("")
     const [inputZipcode, setInputZipcode] = useState<string>("")
+
+    const updateSubmitForm = () => {
+        setSubmitForm(!submitForm)
+    }
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -15,7 +18,8 @@ const InfoForm = () => {
         setEmail(inputEmail)
         setPhone(inputPhone)
         setZipcode(inputZipcode)
-        setSubmitForm(true)
+        updateSubmitForm()
+        console.log(submitForm)
     }
 
     return (
@@ -35,11 +39,10 @@ const InfoForm = () => {
                     <input required type="text" name="zipcode" id="zipcode" onChange={(e) => setInputZipcode(e.target.value)} className="w-[80%] mx-auto bg-light-gray rounded-xl pl-3 text-[10px] h-[30px]" />
                 </div>
                 <div className="flex flex-col justify-start">
-                    <label htmlFor="phoneNumber" className="text-start text-[12px] ml-8 text-navy-bg font-bold">Email</label>
+                    <label htmlFor="phoneNumber" className="text-start text-[12px] ml-8 text-navy-bg font-bold">Phone</label>
                     <input required type="string" name="phoneNumber" id="phoneNumber" onChange={(e) => setInputPhone(e.target.value)} className="w-[80%] mx-auto bg-light-gray rounded-xl pl-3 text-[10px] h-[30px]" />
                 </div>
                 <div><button type="submit" className="rounded-full text-[12px] py-2 px-2 font-bold">Continue</button></div>
-
             </form>
         </div>
     )
