@@ -1,36 +1,21 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useContext, useState } from "react"
+import UserContext from "../context/userContext"
 
-type UserData = {
-    name: string,
-    email: string,
-    zipcode: string,
-    phone: string
-}
 
 const InfoForm = () => {
-    const [submitForm, setSubmitForm] = useState<boolean>(false)
+    const { setName, setEmail, setZipcode, setPhone, setSubmitForm } = useContext(UserContext)
     const [inputName, setInputName] = useState<string>("")
     const [inputEmail, setInputEmail] = useState<string>("")
     const [inputPhone, setInputPhone] = useState<string>("")
     const [inputZipcode, setInputZipcode] = useState<string>("")
-    const [userData, setUserData] = useState<UserData>({
-        name: "",
-        email: "",
-        zipcode: "",
-        phone: ""
-    })
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        const newUserdata = {
-            name: inputName,
-            email: inputEmail,
-            zipcode: inputZipcode,
-            phone: inputPhone
-        }
-        setUserData(newUserdata)
+        setName(inputName)
+        setEmail(inputEmail)
+        setPhone(inputPhone)
+        setZipcode(inputZipcode)
         setSubmitForm(true)
-        console.log(userData)
     }
 
     return (
