@@ -14,7 +14,9 @@ type UserContextType = {
     location: object,
     setLocation: (location: object) => void,
     openChatbot: boolean,
-    setOpenChatbot: (openChatbot: boolean) => void
+    setOpenChatbot: (openChatbot: boolean) => void,
+    userMessage: string[],
+    setUserMessage: (userMessage: string[]) => void
 }
 
 const UserContext = createContext<UserContextType>({
@@ -31,7 +33,9 @@ const UserContext = createContext<UserContextType>({
     location: {},
     setLocation: () => { },
     openChatbot: false,
-    setOpenChatbot: () => { }
+    setOpenChatbot: () => { },
+    userMessage: [],
+    setUserMessage: () => { }
 })
 
 export default UserContext
