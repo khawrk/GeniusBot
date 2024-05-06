@@ -10,7 +10,9 @@ type UserContextType = {
     phone: string,
     setPhone: (phone: string) => void,
     submitForm: boolean,
-    setSubmitForm: (submitForm: boolean) => void
+    setSubmitForm: (submitForm: boolean) => void,
+    location: object,
+    setLocation: (location: object) => void
 }
 
 const UserContext = createContext<UserContextType>({
@@ -23,7 +25,9 @@ const UserContext = createContext<UserContextType>({
     phone: '',
     setPhone: () => { },
     submitForm: false,
-    setSubmitForm: () => { }
+    setSubmitForm: () => { },
+    location: {},
+    setLocation: () => { }
 })
 
 export default UserContext
