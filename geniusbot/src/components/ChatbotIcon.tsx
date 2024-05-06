@@ -1,11 +1,12 @@
 import ChatbotImage from '../assets/botIcon.svg'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import ChatbotBox from './ChatbotBox'
-
+import UserContext from '../context/userContext'
 
 
 const ChatbotIcon = () => {
-  const [openChatbot, setOpenChatbot] = useState<boolean>(false)
+  // const [openChatbot, setOpenChatbot] = useState<boolean>(false)
+  const { openChatbot, setOpenChatbot } = useContext(UserContext)
 
   return (
     <>

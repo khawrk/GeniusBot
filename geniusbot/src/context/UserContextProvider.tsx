@@ -12,9 +12,10 @@ const UserContextProvider = ({ children }: UserContextProviderProps) => {
     const [phone, setPhone] = useState<string>('')
     const [submitForm, setSubmitForm] = useState<boolean>(false)
     const [location, setLocation] = useState<object>({})
+    const [openChatbot, setOpenChatbot] = useState<boolean>(false)
 
     return (
-        <UserContext.Provider value={{ name, setName, email, setEmail, zipcode, setZipcode, phone, setPhone, submitForm, setSubmitForm, location, setLocation }}>
+        <UserContext.Provider value={{ name, setName, email, setEmail, zipcode, setZipcode, phone, setPhone, submitForm, setSubmitForm, location, setLocation, openChatbot, setOpenChatbot }}>
             {children}
         </UserContext.Provider>
     )

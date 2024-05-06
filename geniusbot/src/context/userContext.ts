@@ -12,7 +12,9 @@ type UserContextType = {
     submitForm: boolean,
     setSubmitForm: (submitForm: boolean) => void,
     location: object,
-    setLocation: (location: object) => void
+    setLocation: (location: object) => void,
+    openChatbot: boolean,
+    setOpenChatbot: (openChatbot: boolean) => void
 }
 
 const UserContext = createContext<UserContextType>({
@@ -27,7 +29,9 @@ const UserContext = createContext<UserContextType>({
     submitForm: false,
     setSubmitForm: () => { },
     location: {},
-    setLocation: () => { }
+    setLocation: () => { },
+    openChatbot: false,
+    setOpenChatbot: () => { }
 })
 
 export default UserContext

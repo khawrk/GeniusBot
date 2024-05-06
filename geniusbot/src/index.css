@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
 }
 
-button {
+button.normal {
   border: 1px solid transparent;
   font-family: inherit;
   background-color: #415B77;
@@ -34,12 +34,12 @@ button {
   color: #F4F3EE
 }
 
-button:hover {
+button.normal:hover {
   border-color: #778DA8;
 }
 
-button:focus,
-button:focus-visible {
+button.normal:focus,
+button.normal:focus-visible {
   outline: 4px auto #778DA8;
 }
 

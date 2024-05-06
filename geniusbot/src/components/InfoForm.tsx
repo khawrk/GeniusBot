@@ -8,18 +8,15 @@ const InfoForm = () => {
     const [inputPhone, setInputPhone] = useState<string>("")
     const [inputZipcode, setInputZipcode] = useState<string>("")
 
-    const updateSubmitForm = () => {
-        setSubmitForm(!submitForm)
-    }
-
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setName(inputName)
         setEmail(inputEmail)
         setPhone(inputPhone)
         setZipcode(inputZipcode)
-        updateSubmitForm()
-        console.log(submitForm)
+        // console.log("Before setting submitForm:", submitForm); // Log before setting
+        setSubmitForm(!submitForm);
+        console.log("After setting submitForm:", !submitForm); // Log after setting
     }
 
     return (
@@ -42,7 +39,7 @@ const InfoForm = () => {
                     <label htmlFor="phoneNumber" className="text-start text-[12px] ml-8 text-navy-bg font-bold">Phone</label>
                     <input required type="string" name="phoneNumber" id="phoneNumber" onChange={(e) => setInputPhone(e.target.value)} className="w-[80%] mx-auto bg-light-gray rounded-xl pl-3 text-[10px] h-[30px]" />
                 </div>
-                <div><button type="submit" className="rounded-full text-[12px] py-2 px-2 font-bold">Continue</button></div>
+                <div><button type="submit" className="normal rounded-full text-[12px] py-2 px-2 font-bold">Continue</button></div>
             </form>
         </div>
     )
