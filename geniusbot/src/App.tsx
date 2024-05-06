@@ -17,11 +17,12 @@ function App() {
   useEffect(() => {
     if (coords) {
       setLocation(coords)
+      console.log(location)
     }
 
-  }, [coords])
+  }, [])
 
-  console.log(location)
+  // console.log(location)
 
   return (
 
