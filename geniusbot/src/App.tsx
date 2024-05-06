@@ -26,15 +26,15 @@ function App() {
   return (
 
     <>
-      <h1 className='font-bold text-[2rem]'>Welcome to GeniusBot</h1>
+      <h1 className='font-bold text-[2rem] text-cream-bg'>Welcome to GeniusBot</h1>
       {!isGeolocationAvailable ? (
-        <div>Your browser does not support Geolocation</div>
+        <div className='text-cream-bg'>Your browser does not support Geolocation</div>
       ) : !isGeolocationEnabled ? (
-        <div>Geolocation is not enabled</div>
+        <div className='text-cream-bg'>Geolocation is not enabled</div>
       ) : coords ? (
-        <div>Saved your location data</div>
+        <div className='text-cream-bg'>Saved your location data</div>
       ) : (
-        <div> Getting the location data&hellip; </div>
+        <div className='text-cream-bg'> Getting the location data&hellip; </div>
       )}
       <ChatbotIcon />
     </>

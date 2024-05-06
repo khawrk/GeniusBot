@@ -20,8 +20,8 @@ const InfoForm = () => {
     }
 
     return (
-        <div className="text-navy-bg">
-            <h3 className="text-[14px] pt-5 pb-5 px-5 font-bold">Fill in the form so we know you better before we start chatting 🙂</h3>
+        <div className="text-navy-bg h-full flex flex-col justify-center">
+            <h3 className="text-[14px] pt-5 pb-5 px-5 font-bold mx-3">Fill in the form so we know you better before we start chatting 🙂</h3>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="flex flex-col justify-start">
                     <label htmlFor="name" className="text-start text-[12px] ml-8 text-navy-bg font-bold">Name</label>
