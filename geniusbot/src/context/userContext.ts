@@ -16,7 +16,18 @@ type UserContextType = {
     openChatbot: boolean,
     setOpenChatbot: (openChatbot: boolean) => void,
     userMessage: string[],
-    setUserMessage: (userMessage: string[]) => void
+    setUserMessage: (userMessage: string[]) => void,
+    inputPrompt: string,
+    setInputPrompt: (inputPrompt: string) => void,
+    recentPrompt: string,
+    setRecentPrompt: (recentPrompt: string) => void,
+    showResult: boolean,
+    setShowResult: (showResult: boolean) => void,
+    loading: boolean,
+    setLoading: (loading: boolean) => void,
+    resultData: string,
+    setResultData: (resultData: string) => void,
+    onSent: (prompt?: string) => void
 }
 
 const UserContext = createContext<UserContextType>({
@@ -35,7 +46,18 @@ const UserContext = createContext<UserContextType>({
     openChatbot: false,
     setOpenChatbot: () => { },
     userMessage: [],
-    setUserMessage: () => { }
+    setUserMessage: () => { },
+    inputPrompt: '',
+    setInputPrompt: () => { },
+    recentPrompt: '',
+    setRecentPrompt: () => { },
+    showResult: false,
+    setShowResult: () => { },
+    loading: false,
+    setLoading: () => { },
+    resultData: '',
+    setResultData: () => { },
+    onSent: () => { }
 })
 
 export default UserContext
