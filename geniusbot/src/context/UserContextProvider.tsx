@@ -19,7 +19,7 @@ const UserContextProvider = ({ children }: UserContextProviderProps) => {
     const [recentPrompt, setRecentPrompt] = useState<string>('');
     const [showResult, setShowResult] = useState<boolean>(false)
     // const [loading, setLoading] = useState<boolean>(false) // for loading animation
-    const [resultData, setResultData] = useState<TrustedHTML | string>('')
+    const [resultData, setResultData] = useState<string>('')
     const [messages, setMessages] = useState<Array<{ sender: string, content: string }>>([]);
 
     // const delayParagraph = (index: number, nextWord: string) => {

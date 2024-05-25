@@ -1,5 +1,5 @@
 import MessageIcon from '../assets/messageButton.svg'
-import { FormEvent, useState, useContext } from 'react'
+import { FormEvent, useContext } from 'react'
 import UserContext from '../context/userContext'
 
 const MessageBox = () => {

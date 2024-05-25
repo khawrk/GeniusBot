@@ -1,5 +1,5 @@
 import ChatbotImage from '../assets/botIcon.svg'
-import { useState, useContext } from 'react'
+import {useContext } from 'react'
 import ChatbotBox from './ChatbotBox'
 import UserContext from '../context/userContext'
 

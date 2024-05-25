@@ -23,12 +23,13 @@ type UserContextType = {
     setRecentPrompt: (recentPrompt: string) => void,
     showResult: boolean,
     setShowResult: (showResult: boolean) => void,
-    loading: boolean,
-    setLoading: (loading: boolean) => void,
+    // loading: boolean,
+    // setLoading: (loading: boolean) => void,
     resultData: string,
     setResultData: (resultData: string) => void,
     onSent: (prompt?: string) => void,
-    messages: Array<{ sender: string, content: string }>
+    messages: Array<{ sender: string, content: string }>,
+    setMessages: (messages: Array<{ sender: string, content: string }>) => void,
 }
 
 const UserContext = createContext<UserContextType>({
@@ -54,12 +55,13 @@ const UserContext = createContext<UserContextType>({
     setRecentPrompt: () => { },
     showResult: false,
     setShowResult: () => { },
-    loading: false,
-    setLoading: () => { },
+    // loading: false,
+    // setLoading: () => { },
     resultData: '',
     setResultData: () => { },
     onSent: () => { },
-    messages: []
+    messages: [],
+    setMessages: () => { },
 })
 
 export default UserContext
