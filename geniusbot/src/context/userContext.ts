@@ -27,7 +27,8 @@ type UserContextType = {
     setLoading: (loading: boolean) => void,
     resultData: string,
     setResultData: (resultData: string) => void,
-    onSent: (prompt?: string) => void
+    onSent: (prompt?: string) => void,
+    messages: Array<{ sender: string, content: string }>
 }
 
 const UserContext = createContext<UserContextType>({
@@ -57,7 +58,8 @@ const UserContext = createContext<UserContextType>({
     setLoading: () => { },
     resultData: '',
     setResultData: () => { },
-    onSent: () => { }
+    onSent: () => { },
+    messages: []
 })
 
 export default UserContext

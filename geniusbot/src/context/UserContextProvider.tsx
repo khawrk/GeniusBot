@@ -22,13 +22,13 @@ const UserContextProvider = ({ children }: UserContextProviderProps) => {
     const [resultData, setResultData] = useState<TrustedHTML | string>('')
     const [messages, setMessages] = useState<Array<{ sender: string, content: string }>>([]);
 
-    const delayParagraph = (index: number, nextWord: string) => {
-        setTimeout(function () {
-            setResultData(prev => prev + nextWord)
-        }, 75 * index)
-    }
+    // const delayParagraph = (index: number, nextWord: string) => {
+    //     setTimeout(function () {
+    //         setResultData(prev => prev + nextWord)
+    //     }, 75 * index)
+    // }
 
-    const onSent = async (prompt: string) => {
+    const onSent = async () => {
         // setResultData("")
         // setMessages(prev => [...prev, { sender: name, content: inputPrompt }]); // Add user message
         // setShowResult(true)
@@ -56,7 +56,7 @@ const UserContextProvider = ({ children }: UserContextProviderProps) => {
         const response = await runChat(inputPrompt);
 
         // Process response
-        let responseArray = response.split("**");
+        const responseArray = response.split("**");
         let newResponse: string = '';
         if (responseArray) {
             for (let i = 0; i < responseArray.length; i++) {

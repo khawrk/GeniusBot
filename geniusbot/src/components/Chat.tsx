@@ -4,9 +4,8 @@ import { useRef, useEffect, useContext } from "react"
 import UserContext from "../context/userContext"
 
 
-
 const Chat = () => {
-    const { messages, name, showResult, resultData, recentPrompt } = useContext(UserContext)
+    const { messages, name } = useContext(UserContext)
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
@@ -28,7 +27,7 @@ const Chat = () => {
                         <p className="text-start text-black text-[12px] pl-2 w-[full]">Hi, how can I help you?</p>
                     </div>
                 </div>
-                {messages.map((msg, index) => (
+                {messages.map((msg: { sender: string, content: string }, index: number) => (
                     <div key={index} id={msg.sender === 'GeniusBot' ? 'bot' : 'user'} className={`${msg.sender === 'GeniusBot' ? 'flex justify-start flex-col w-[60%] ml-3 mt-2 left-0 self-start bg-cream-bg' : 'bg-cream-bg flex justify-end flex-col items-end self-end ml-3 mt-2 right-0 mr-3 overflow-y-scroll'}`}>
                         <h3 className={`text-navy-bg font-bold text-[14px] mb-1 ${msg.sender === 'GeniusBot' ? 'text-start' : 'text-end self-end mr-0 pr-0'}`}>{msg.sender === 'GeniusBot' ? 'GeniusBot' : name}</h3>
                         <div className="flex justify-end flex-col items-end ">
